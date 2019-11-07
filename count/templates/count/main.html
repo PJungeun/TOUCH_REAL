@@ -1,28 +1,180 @@
 {% load staticfiles %}
 <head>
-<link href="https://fonts.googleapis.com/css?family=Jua&display=swap?sdss" rel="stylesheet">
+
 
 </head>
 <body  style='background-color:#080E22'>
     {% for post in posts %}
     <form action="{% url 'count' %}">
- 
-    <div style="text-align:center">
-        <!-- <p style='font-size:150px; color:#dbdad8; margin-bottom:0px;'>기호 1번</p>
-        -->
-        <br> <br> <br> <br>  <br> <br> <br> <br> <br>
-        <input class="btn" onclick="location.href='{{post_pk}}/like/'" type="image" src="{% static 'round.png' %}" value="Count" style="width:450px;">
-    </div>
+        <div>
+        <p class="test" style='font-size:180px;font-weight: bold;'><span>TOUCH</span></p>
         
+       
+        <div class="container">
+        <input class="btn" align="center"onclick="location.href='{{post_pk}}/like/'" type="image" src="{% static 'binimg.png' %}" value="Count" style="width:400px;margin-left:400px;margin-top:-200px;">
+        </div>
+        </div>
     </form>
     {% endfor %}
 
+
+
+
 <style>
+
+<!--그라데이션-->
+.test {
+  display: inline-block;
+  padding: 10px 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.test span {
+  background: linear-gradient(to bottom, #000000,#FFFFFF, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .btn{
     border:0;
     outline:0;
 }
 
+<!--반짝이-->
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1b2431;
+  background: #444;
+  color: #fff;
+}
+
+.container{
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  position:relative;
+}
+
+.container::before, .container::after
+{
+  position: absolute;
+  content : "";
+  top: -60%;
+  left: 95%;
+  height:110%;
+  width:110%;
+  border-radius:50%;
+  opacity:0.5;
+  filter: blur(60px);
+}
+
+
+.container::after
+{
+    background-color:#00ffff;
+   z-index: -1;
+  animation : backglow2 15s ease infinite;
+}
+
+.container::before
+{
+    background-color:#ff0072;
+   z-index: -2;
+  animation : backglow1 15s ease infinite;
+}
+
+
+
+
+@keyframes backglow1
+{
+  
+  0%
+  {
+    transform: translate(10%, 10%) scale(1.2);
+    opacity:0.5;
+  }
+  
+   25%
+  {
+    transform: translate(-10%, 10%) scale(1);
+    opacity:0.5;
+  }
+  
+   50%
+  {
+    transform: translate(-10%, -10%) scale(1.4);
+    opacity:0.8;
+  }
+  
+   75%
+  {
+    transform: translate(10%, -10%) scale(1.3);
+    opacity:0.2;
+  }
+  
+   100%
+  {
+    transform: translate(10%, 10%) scale(1.2);
+    opacity:0.5;
+  }
+  
+  
+}
+
+
+
+
+
+@keyframes backglow2
+{
+  
+  0%
+  {
+    transform: translate(-10%, -10%) scale(1.2);
+    opacity:0.5;
+  }
+  
+   25%
+  {
+    transform: translate(10%, -10%) scale(1);
+    opacity:0.5;
+  }
+  
+   50%
+  {
+    transform: translate(10%, 10%) scale(1.4);
+    opacity:0.8;
+  }
+  
+   75%
+  {
+    transform: translate(-10%, 10%) scale(1.3);
+    opacity:0.2;
+  }
+  
+   100%
+  {
+    transform: translate(-10%, -10%) scale(1.2);
+    opacity:0.5;
+  }
+  
+  
+}
 </style>
 
 </body>

@@ -1,7 +1,6 @@
 {% load staticfiles %}
 <head>
-
-
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Serif&display=swap" rel="stylesheet">
 </head>
 <body  style='background-color:#080E22'>
     {% for post in posts %}
@@ -9,10 +8,10 @@
         <div>
         <p class="test" style='font-size:180px;font-weight: bold;'><span>TOUCH</span></p>
         
-       <!--
-       <div class="container">-->
+       
+       <div class="container">
         <input class="btn" align="center"onclick="location.href='{{post_pk}}/like/'" type="image" src="{% static 'count/binimg.png' %}" value="Count" style="width:400px;margin-left:400px;margin-top:-200px;">
-        
+        </div>
         </div>
     </form>
     {% endfor %}
@@ -49,6 +48,7 @@ html{
 
 body
 {
+  font-family: 'Abril Fatface', cursive;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,14 +87,14 @@ body
 {
     background-color:#00ffff;
    z-index: -1;
-  animation : backglow2 15s ease infinite;
+  animation : backglow2 5s ease infinite;
 }
 
 .container::before
 {
     background-color:#ff0072;
    z-index: -2;
-  animation : backglow1 15s ease infinite;
+  animation : backglow1 5s ease infinite;
 }
 
 
